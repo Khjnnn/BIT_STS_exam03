@@ -27,10 +27,12 @@ public class BoardController {
 	private BoardService service;
 	
 	@ResponseBody
-	public List<BoardVO> listJSON(PageDTO dto){
+	public List<BoardVO> listJSON(PageDTO dto){ //JSON 예제
 		return service.getPageList(dto);
 	}
-	@GetMapping("/list")
+
+	//리스트 맵핑 > 출력
+	@GetMapping("/list") 
 	public void list(@ModelAttribute("pageDTO") PageDTO dto, Model model) {
 		log.info("===== board list -------------");
 		log.info(dto);
