@@ -24,7 +24,7 @@ public class PageUtil {
 		int realEnd = (int)(total/10.0); // 전체 페이지에 대한 끝번호 값 
 		this.next = realEnd > tempEnd; // 전체 끝 이 해당페이지 끝번호보다 클경우 true (다음페이지 이동)
 		if(realEnd > tempEnd) { // 전체 끝번호 > 해당페이지끝번호 = true
-			this.end = tempEnd; // end 에 해당페이지 끝번호
+			this.end = tempEnd; // end = 해당페이지 끝번호
 			
 		}else {
 			this.end = realEnd + 1 ; // false > 전체 끝번호 +1

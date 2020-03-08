@@ -16,6 +16,7 @@ import lombok.extern.log4j.Log4j;
 public class BoardServiceImpl implements BoardService {
 
 	private BoardMapper mapper;
+	// 맵퍼 맵핑 
 	
 	@Override
 	public List<BoardVO> getPageList(PageDTO dto) {

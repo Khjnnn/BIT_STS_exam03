@@ -43,12 +43,12 @@ public class BoardController {
 
 	}
 
-	@GetMapping("/register")
+	@GetMapping("/register") // Get 맵핑
 	public void registerGet() {
 		log.info("===== register get ~~---");
 	}
 	
-	@PostMapping("/register")
+	@PostMapping("/register") // submit post > 리다이렉트(list)
 	public String registerPost() {
 		log.info("===== register post ~~---");
 		return "redirect:list";
