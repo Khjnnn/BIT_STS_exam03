@@ -8,7 +8,9 @@ import lombok.extern.log4j.Log4j;
 
 @ControllerAdvice
 @Log4j
-public class CommonExceptionAdvice {
+public class CommonExceptionAdvice extends RuntimeException{
+	// 오류 페이지 컨트롤러 
+	// Exception 오류 발생시 에러페이지로 리턴 
 	
 	@ExceptionHandler(Exception.class)
 	public String except(Exception ex, Model model) {

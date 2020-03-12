@@ -35,8 +35,11 @@ public class BoardController {
 	@GetMapping("/list") 
 	public void list(@ModelAttribute("pageDTO") PageDTO dto, Model model) {
 		log.info("===== board list -------------");
-		log.info(dto);
+		int page = dto.getPage();
 		log.info(service);
+		dto.setAmountp(page*10);
+		dto.setPageone(page*10-10);
+		log.info(dto);	
 		model.addAttribute("sample", "Hello List");
 		model.addAttribute("list", service.getPageList(dto));
 		model.addAttribute("pageUtil", new PageUtil(dto, service.getTotal()));

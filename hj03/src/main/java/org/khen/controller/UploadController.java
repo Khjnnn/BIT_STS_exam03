@@ -67,8 +67,9 @@ public class UploadController {
 	
 	@PostMapping("/uploadFormAction")
 	public void exUploadPost(ArrayList<MultipartFile> uploadFile) {
-	log.info("포스트 탐"); 
-	log.info(uploadFile); // Post 유무 체크  
+
+		log.info("포스트 탐"); 
+		log.info(uploadFile); // Post 유무 체크  
 	
 		uploadFile.forEach(file -> { //업로드 파일 리스트 출력
 			log.info("----------------------------------");
@@ -114,7 +115,7 @@ public class UploadController {
 				thumbnail.close(); //close 입력 필수 
 				
 			} catch (Exception e) {
-				log.error(e.getMessage());
+				throw new CommonExceptionAdvice();			
 			}//end catch
 		}
 		return new ResponseEntity<>(nameList, HttpStatus.OK);
