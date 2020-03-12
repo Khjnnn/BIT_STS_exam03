@@ -17,6 +17,8 @@ public class PageUtil {
 		this.total = total;
 		
 		int pageNum = dto.getPage(); // 페이지번호 가져옴
+		this.dto.setPageone(pageNum*10-9);
+		this.dto.setAmountp(pageNum*10);
 		int tempEnd = (int)Math.ceil(pageNum/10.0) * 10; // 가져온 페이지 번호에 대한 마지막 페이지 번호(10페이지 단위)
 		this.start = tempEnd - 9 < 0 ? 1:tempEnd - 9 ; // 페이지 끝번호 - 9 > 음수면 1,아니면 -9한 값
 		this.prev = this.start != 1 ; // 스타트가 1이 아닐경우 false  

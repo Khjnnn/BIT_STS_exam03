@@ -8,20 +8,20 @@
 		<![CDATA[
 		select bno, title, content, writer, regdate
 		from (
-		select rownum rn, bno, title, content, writer, regdate
-		from tbl_board
-		where rownum <= (#{page} *#{amount})
-		and bno > 0
-		order by bno desc 
-		)
-		where rn > ((#{page}-1)*#{amount})
+		select d.bno, d.title, d.content, d.writer, d.regdate
+		from tbl_board as d
+		where d.bno < #{amount, jdbcType=INTEGER} * #{page, jdbcType=INTEGER}+1
+		and d.bno > #{page, jdbcType=INTEGER}*10-10
+		order by d.bno asc 
+		) A
+		limit 0, 10
 		]]>
 	</select>
 	<select id="getTotal" resultType="int">
 	select count(*) from tbl_board
 	</select>
 	<select id="insert" resultType="org.khen.vo.BoardVO">
-	insert into tbl_board (bno, title,content,writer) values (seq_board.nextval, #{title},#{content},#{writer})
+	insert into tbl_board (title,content,writer) values (#{title},#{content},#{writer})
 	</select>
 	
 </mapper>
