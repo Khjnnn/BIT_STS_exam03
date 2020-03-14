@@ -1,5 +1,6 @@
 package org.khen.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +25,10 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/board/*")
 @AllArgsConstructor
 public class BoardController {
-	private BoardService service;
 	
+	@Autowired
+	private BoardService service;
+
 	@ResponseBody
 	public List<BoardVO> listJSON(PageDTO dto){ //JSON 예제
 		return service.getPageList(dto);

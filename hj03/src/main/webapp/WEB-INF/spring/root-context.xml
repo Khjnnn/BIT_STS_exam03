@@ -13,17 +13,18 @@
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 	
 	<!-- oracle DB -->	
-	<!-- 
+	 
 	<property name="driverClassName"
 		value="oracle.jdbc.driver.OracleDriver"></property>
 	<property name="jdbcUrl"
-		value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+		value="jdbc:oracle:thin:@projectdb.c4cty0dbhpqb.ap-northeast-2.rds.amazonaws.com:1521:XE"></property>
 	<property name="username" value="bit03"></property>
 	<property name="password" value="bit03"></property>
-	 -->
+	
 	<!-- //oracle DB -->
 	
-	<!-- SQL DB -->
+	
+	<!-- SQL DB 
 	
 	<property name="driverClassName"
 		value="com.mysql.cj.jdbc.Driver"/>
@@ -31,6 +32,7 @@
 		value="jdbc:mysql://databaserds.c4cty0dbhpqb.ap-northeast-2.rds.amazonaws.com:3306/test"/>
 	<property name="username" value="bit03"/>
 	<property name="password" value="bit03"/>
+	-->
 	<!-- -->
 	</bean>
 	<!-- HikariCP configuration -->	
